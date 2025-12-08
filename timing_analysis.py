@@ -78,12 +78,12 @@ def collect_timings(datasets: List[Tuple[str, int, List[Player]]], algorithms: D
 
 def print_results(results) -> None:
     print("\nTiming results (ms):")
-    header = f"{'Dataset':25} {'Size':>8} {'Algorithm':20} {'Avg':>10} {'Stdev':>10}"
+    header = f"{'Dataset':27} {'Size':>8} {'Algorithm':20} {'Avg':>10} {'Stdev':>10}"
     print(header)
     print("-" * len(header))
     for row in sorted(results, key=lambda r: (r["size"], r["algorithm"])):
         print(
-            f"{row['dataset'][:25]:25} "
+            f"{row['dataset'][:27]:27} "
             f"{row['size']:>8} "
             f"{row['algorithm']:20} "
             f"{row['avg_ms']:>10.3f} "

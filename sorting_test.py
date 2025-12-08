@@ -1,6 +1,7 @@
 """Unit tests for sorting algorithms."""
 
 import unittest
+import time
 
 from .player import Player
 from .sorting_algorithms import numpy_sort, insertion_sort, heapsort
@@ -38,6 +39,12 @@ class TestNumpySort(unittest.TestCase):
         actual_order = [p.name for p in result]
         self.assertEqual(expected_order, actual_order)
 
+    @classmethod
+    def tearDownClass(cls):
+        """Add delay after all numpy_sort tests complete."""
+        print("\n✓ numpy_sort tests passed\n")
+        time.sleep(1.5)
+
 
 class TestInsertionSort(unittest.TestCase):
     """Tests for insertion_sort algorithm."""
@@ -71,6 +78,12 @@ class TestInsertionSort(unittest.TestCase):
         actual_order = [p.name for p in result]
         self.assertEqual(expected_order, actual_order)
 
+    @classmethod
+    def tearDownClass(cls):
+        """Add delay after all insertion_sort tests complete."""
+        print("\n✓ insertion_sort tests passed. Moving to next algorithm...\n")
+        time.sleep(1.5)
+
 
 class TestHeapsort(unittest.TestCase):
     """Tests for heapsort algorithm."""
@@ -103,6 +116,12 @@ class TestHeapsort(unittest.TestCase):
         expected_order = ["Bob", "Alice", "Charlie"]
         actual_order = [p.name for p in result]
         self.assertEqual(expected_order, actual_order)
+
+    @classmethod
+    def tearDownClass(cls):
+        """Add delay after all heapsort tests complete."""
+        print("\n✓ heapsort tests passed. All tests completed!\n")
+        time.sleep(1.5)
 
 
 if __name__ == "__main__":

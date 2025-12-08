@@ -5,6 +5,7 @@ Generates synthetic datasets and runs the timing analysis producing
 """
 from pathlib import Path
 import sys
+import time
 
 # Ensure package import from workspace root
 sys.path.insert(0, str(Path('.').resolve()))
@@ -15,7 +16,8 @@ from final_project.timing_analysis import collect_timings, print_results, plot_r
 
 
 def main() -> None:
-    print('Generating synthetic datasets of size 10, 217, and 1000...')
+    print('\nGenerating synthetic datasets of size 10, 217, and 1000...')
+    time.sleep(1.5)
     players_10 = synthetic_player_data(10)
     players_1000 = synthetic_player_data(1000)
 
@@ -34,9 +36,11 @@ def main() -> None:
         'heapsort': sa.heapsort,
     }
 
-    print('Running timing analysis\n\tSorting by points-per-game\nrepeating the sort for each algorithm 5 times and averaging...')
+    print('Running timing analysis\n\tSorting by points-per-game\nRepeating the sort for each algorithm 5 times and averaging...')
+    time.sleep(1.5)
     results = collect_timings(datasets=datasets, algorithms=algorithms, stat='ppg', descending=True, repeats=5)
     print_results(results)
+    time.sleep(1.5)
     plot_results(results, 'timing_results_demo.png')
     print('Demo complete. Plot saved to timing_results_demo.png')
 
