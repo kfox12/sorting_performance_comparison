@@ -13,3 +13,7 @@
 - The *make demo* target in the Makefile sorts the three different sized data sets with each of the three different sorting algorithms, five times each (total of 45 sorts)
     - The average run time of each algorithm for each data set size is computed, and added to the visual plot in the timing_results_demo.png file
 - As expected, the highly-optimized numpy sort algorithm outperformed both heapsort and insertion sort, with insertion sort following an exponential growth curve for increasingly large data sets
+
+# Testing
+- *make test*
+- *make demo*
